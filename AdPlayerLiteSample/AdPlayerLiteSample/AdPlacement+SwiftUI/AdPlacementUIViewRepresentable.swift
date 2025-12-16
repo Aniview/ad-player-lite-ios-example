@@ -29,12 +29,12 @@ struct AdPlacementUIViewRepresentable: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> UIViewType {
-        let placement = AdPlacementView(pubId: pubId, tagId: tagId)
+        let placement = AdPlayer.makeAdPlacement(pubId: pubId, tagId: tagId)
         placement.delegate = context.coordinator
         let uiView = CollapsibleWrapperView(content: placement)
         context.coordinator.view = uiView
         DispatchQueue.main.async {
-            self.controller.wrappedValue = placement.playerController
+            self.controller.wrappedValue = placement.controller
         }
         return uiView
     }

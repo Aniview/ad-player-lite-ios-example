@@ -33,25 +33,28 @@ final class AdCell: UITableViewCell {
         }
 
         removeAdPlayer()
-//        AdPlayer.getTag(pubId: pubId, tagId: tagId) {
-//            $0.closeFullscreenButton = false
-//        }
-        let placement = AdPlacementView(pubId: pubId, tagId: tagId)
-        placement.translatesAutoresizingMaskIntoConstraints = false
 
-        let decorated = placement.withNonObstructiveBorder(color: .blue, width: 1)
-        contentView.addSubview(decorated)
-        decorated.translatesAutoresizingMaskIntoConstraints = false
+        let tag = AdPlayer.getTag(pubId: pubId, tagId: tagId)
+        let controller = tag.newInReadController()
+        let placement = AdPlacementView()
+        placement.attachController(controller)
+        #if DEBUG
+        placement.layer.borderColor = UIColor.blue.cgColor
+        placement.layer.borderWidth = 2
+        #endif
+
+        contentView.addSubview(placement)
+        placement.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            decorated.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            decorated.topAnchor.constraint(equalTo: contentView.topAnchor),
-            decorated.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            decorated.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            placement.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            placement.topAnchor.constraint(equalTo: contentView.topAnchor),
+            placement.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            placement.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
 
         self.adPlacement = placement
         placement.delegate = self
-        controllerCreated(placement.playerController)
+        controllerCreated(controller)
     }
 
     private func removeAdPlayer() {

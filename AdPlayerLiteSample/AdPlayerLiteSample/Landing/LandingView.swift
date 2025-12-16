@@ -24,20 +24,12 @@ struct LandingView: View {
             Text("AdPlayer Examples").font(.title)
                 .fadingMessage(message: $topFadingMessage)
             Spacer()
-            Text("SwiftUI")
-            MenuNavigationButton("Basic") {
-                BasicExampleView(pubId: pubId, tagId: tagId)
-            }
-            MenuNavigationButton("Scroll View") {
-                ScrollViewExample(pubId: pubId, tagId: tagId)
-            }
-            Divider()
             Spacer().frame(height: 20)
             Text("UIKit")
             MenuNavigationButton("Basic") {
                 UIViewControllerAdapter {
                     SimpleExampleVC(pubId: pubId, tagId: tagId)
-                }.navigationTitle("UIView")
+                }.navigationTitle("Basic")
             }
             MenuNavigationButton("Table View") {
                 UIViewControllerAdapter {
@@ -45,14 +37,27 @@ struct LandingView: View {
                 }.navigationTitle("UITableView")
             }
             Divider()
+            MenuNavigationButton("InStream Content Override") {
+                UIViewControllerAdapter {
+                    InStreamContentOverrideVC()
+                }.navigationTitle("InStream")
+            }
             AppButton("Interstitial", backgroundColor: .gray) {
-                let config = InterstitialConfiguration(
+                let config = AdPlayerInterstitialConfiguration(
                     stalledVideoTimeout: 2.0,
                     showCloseButtonAfterAdDuration: true
                 )
                 AdPlayer.showInterstitial(pubId: pubId, tagId: tagId, configuration: config) {
                     topFadingMessage = "Interstitial Closed"
                 }
+            }
+            Divider()
+            Text("SwiftUI")
+            MenuNavigationButton("Basic") {
+                BasicExampleView(pubId: pubId, tagId: tagId)
+            }
+            MenuNavigationButton("Scroll View") {
+                ScrollViewExample(pubId: pubId, tagId: tagId)
             }
             Spacer()
             Text("SDK v.\(AdPlayerLite.sdkVersionName)")

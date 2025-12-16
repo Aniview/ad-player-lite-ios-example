@@ -8,14 +8,6 @@
 import UIKit
 
 extension UIView {
-    func withNonObstructiveBorder(color: UIColor, width: CGFloat) -> UIView {
-        let border = UIView()
-        border.backgroundColor = color
-        border.addSubview(self)
-        bindConstraintsToContainer(insets: .init(top: width, left: width, bottom: width, right: width))
-        return border
-    }
-
     func bindConstraintsToContainerMargines() {
         guard let superview = superview else { return }
         let parent = superview.layoutMarginsGuide

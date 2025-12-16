@@ -6,12 +6,14 @@
 //
 
 import AdPlayerLite
+import Combine
 import UIKit
 
 final class SimpleExampleVC: UIViewController {
     private let pubId: String
     private let tagId: String
     private var lastReportedHeight: CGFloat = 0
+    private var bag: Set<AnyCancellable> = []
 
     init(pubId: String, tagId: String) {
         self.pubId = pubId
@@ -27,20 +29,38 @@ final class SimpleExampleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let placement = AdPlacementView(pubId: pubId, tagId: tagId)
+        let controller = AdPlayer
+            .getTag(pubId: pubId, tagId: tagId)
+            .newInReadController()
+        let placement = AdPlacementView()
+        placement.attachController(controller)
+
+        #if DEBUG
+        placement.layer.borderColor = UIColor.blue.cgColor
+        placement.layer.borderWidth = 2
+        #endif
         placement.delegate = self
 
-        let decorated = placement.withNonObstructiveBorder(color: .green, width: 2)
-
-        view.addSubview(decorated)
-
-        decorated.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(placement)
+        placement.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            decorated.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            decorated.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            decorated.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-            decorated.topAnchor.constraint(greaterThanOrEqualTo: view.layoutMarginsGuide.topAnchor)
+            placement.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            placement.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            placement.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            placement.topAnchor.constraint(greaterThanOrEqualTo: view.layoutMarginsGuide.topAnchor)
         ])
+
+        observeEventsAndStates(controller: controller)
+    }
+
+    private func observeEventsAndStates(controller: AdPlayerController) {
+        controller.eventsPublisher.sink { event in
+            print("Ad event: \(event)")
+        }.store(in: &bag)
+
+        controller.statePublisher.sink { state in
+            print("Ad state: \(state)")
+        }.store(in: &bag)
     }
 }
 

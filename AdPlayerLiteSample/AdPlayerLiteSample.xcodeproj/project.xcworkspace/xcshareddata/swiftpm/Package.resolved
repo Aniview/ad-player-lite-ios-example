@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Aniview/ad-player-lite-ios-spm.git",
       "state" : {
-        "revision" : "f77e380865e219ebe0ce5831d205c92713adcca6",
-        "version" : "0.0.2"
+        "revision" : "05ce0738a81ff5f6ad7b7a7a69f2e5d42b53497c",
+        "version" : "0.0.4"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-interactive-media-ads-ios.git",
       "state" : {
-        "revision" : "8b8e3bbe0b8044cdfeedeadae3e8dc871017c31d",
-        "version" : "3.23.0"
+        "revision" : "871bc80349774ba228c41096129995d1e9848b04",
+        "version" : "3.28.10"
       }
     }
   ],

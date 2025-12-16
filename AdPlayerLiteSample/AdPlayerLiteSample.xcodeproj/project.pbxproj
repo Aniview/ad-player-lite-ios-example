@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DD679CC2EF1E919003046A3 /* InStreamContentOverrideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD679CB2EF1E919003046A3 /* InStreamContentOverrideVC.swift */; };
 		802C46AF2CF08C7A0019A9B2 /* PlayerLoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46AE2CF08C7A0019A9B2 /* PlayerLoggerView.swift */; };
 		802C46B12CF09E830019A9B2 /* PlayerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46B02CF09E820019A9B2 /* PlayerStateView.swift */; };
 		802C46B52CF4E2F30019A9B2 /* PlayerStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46B42CF4E2F30019A9B2 /* PlayerStateIndicator.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DD679CB2EF1E919003046A3 /* InStreamContentOverrideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStreamContentOverrideVC.swift; sourceTree = "<group>"; };
 		802C46AE2CF08C7A0019A9B2 /* PlayerLoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLoggerView.swift; sourceTree = "<group>"; };
 		802C46B02CF09E820019A9B2 /* PlayerStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateView.swift; sourceTree = "<group>"; };
 		802C46B42CF4E2F30019A9B2 /* PlayerStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateIndicator.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		803094B42CA2C512009233FF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				2DD679CB2EF1E919003046A3 /* InStreamContentOverrideVC.swift */,
 				802C46B32CF4E2BE0019A9B2 /* PlayerGui */,
 				80F904702CCB84B700442086 /* UIView+Extensions.swift */,
 				80F9046A2CCB834C00442086 /* TableView */,
@@ -318,6 +321,7 @@
 				803094AD2CA2C4A6009233FF /* LogView.swift in Sources */,
 				80E587EA2CEF458C00588A96 /* PlayerTimeIndicator.swift in Sources */,
 				80E012F82CDB642D000D1439 /* AdPlacementSU.swift in Sources */,
+				2DD679CC2EF1E919003046A3 /* InStreamContentOverrideVC.swift in Sources */,
 				80F904712CCB84B700442086 /* UIView+Extensions.swift in Sources */,
 				80F9046B2CCB834C00442086 /* AdCell.swift in Sources */,
 				80EA08242D133B06008A8FCA /* AppButton.swift in Sources */,
@@ -558,8 +562,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Aniview/ad-player-lite-ios-spm.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				kind = exactVersion;
+				version = 0.0.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
