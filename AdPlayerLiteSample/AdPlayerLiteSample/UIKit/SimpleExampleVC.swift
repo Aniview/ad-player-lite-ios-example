@@ -75,3 +75,37 @@ extension SimpleExampleVC: AdPlacementViewLayoutDelegate {
         }
     }
 }
+
+import AdPlayerLite
+import Combine
+import UIKit
+
+class YourViewController: UIViewController {
+    private var bag: Set<AnyCancellable> = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let controller = AdPlayer
+            .getTag(pubId: "<your pubId>", tagId: "<your tagId>")
+            .newInReadController()
+
+        let placement = AdPlacementView()
+        placement.attachController(controller)
+        placement.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(placement)
+        NSLayoutConstraint.activate([
+            placement.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            placement.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            placement.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor)
+        ])
+
+        controller.eventsPublisher.sink { event in
+            print("Ad event: \(event)")
+        }.store(in: &bag)
+
+        controller.statePublisher.sink { state in
+            print("Ad state: \(state)")
+        }.store(in: &bag)
+    }
+}

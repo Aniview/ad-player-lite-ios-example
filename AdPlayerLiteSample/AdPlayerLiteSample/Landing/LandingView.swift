@@ -36,7 +36,6 @@ struct LandingView: View {
                     TableViewExampleVC(pubId: pubId, tagId: tagId)
                 }.navigationTitle("UITableView")
             }
-            Divider()
             MenuNavigationButton("InStream Content Override") {
                 UIViewControllerAdapter {
                     InStreamContentOverrideVC()

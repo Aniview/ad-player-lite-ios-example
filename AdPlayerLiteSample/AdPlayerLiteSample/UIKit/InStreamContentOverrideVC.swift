@@ -57,6 +57,7 @@ final class InStreamContentOverrideVC: UIViewController {
             .newInReadController { config in
                 guard let overrideVideoId else { return }
                 config.contentOverride = .init(cmsId: overrideVideoId)
+                config.disableVideoAds = true
             }
 
         placement.attachController(controller)
