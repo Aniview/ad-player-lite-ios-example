@@ -1,5 +1,5 @@
 //
-//  SimpleExampleVC.swift
+//  InStreamContentOverrideVC.swift
 //  AdPlayerLightQA
 //
 //  Created by Pavel Yevtukhov on 24.09.2024.
@@ -34,29 +34,38 @@ final class InStreamContentOverrideVC: UIViewController {
         showVideoButton.addTarget(self, action: #selector(onShowDefaultVideo), for: .touchUpInside)
 
         let showCustomVideoButton = UIButton(type: .system)
-        showCustomVideoButton.setTitle("Show custom video", for: .normal)
+        showCustomVideoButton.setTitle("Show custom CMS video", for: .normal)
         stackView.addArrangedSubview(showCustomVideoButton)
         showCustomVideoButton.addTarget(self, action: #selector(onShowCustomVideo), for: .touchUpInside)
+
+        let showCustomURLVideoButton = UIButton(type: .system)
+        showCustomURLVideoButton.setTitle("Show direct URL video", for: .normal)
+        stackView.addArrangedSubview(showCustomURLVideoButton)
+        showCustomURLVideoButton.addTarget(self, action: #selector(onShowDirectURLVideo), for: .touchUpInside)
     }
 
     @objc
     private func onShowDefaultVideo() {
-        showAdPlayer(overrideVideoId: nil)
+        showAdPlayer(nil)
     }
 
     @objc
     private func onShowCustomVideo() {
-        showAdPlayer(overrideVideoId: "6915845312387b243304e745")
+        showAdPlayer(.cmsId("6915845312387b243304e745"))
     }
 
-    private func showAdPlayer(overrideVideoId: String?) {
+    @objc
+    private func onShowDirectURLVideo() {
+        showAdPlayer(.directUrls(["https://getsamplefiles.com/download/mp4/sample-5.mp4"]))
+    }
+
+    private func showAdPlayer(_ contentOverride: AdPlayerContentOverride?) {
         placement.removeFromSuperview()
         onResize(height: 0)
         let controller = AdPlayer
             .getTag(pubId: pubId, tagId: tagId)
             .newInReadController { config in
-                guard let overrideVideoId else { return }
-                config.contentOverride = .init(cmsId: overrideVideoId)
+                config.contentOverride = contentOverride
                 config.disableVideoAds = true
             }
 
