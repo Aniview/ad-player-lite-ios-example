@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D786C7D2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D786C7C2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift */; };
+		2DC390502F03F152004E5C2E /* MergeContentConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC3904F2F03F152004E5C2E /* MergeContentConfigVC.swift */; };
 		802C46AF2CF08C7A0019A9B2 /* PlayerLoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46AE2CF08C7A0019A9B2 /* PlayerLoggerView.swift */; };
 		802C46B12CF09E830019A9B2 /* PlayerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46B02CF09E820019A9B2 /* PlayerStateView.swift */; };
 		802C46B52CF4E2F30019A9B2 /* PlayerStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C46B42CF4E2F30019A9B2 /* PlayerStateIndicator.swift */; };
@@ -24,7 +25,6 @@
 		80D011422CAA9C4B0002E458 /* ScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D011412CAA9C4B0002E458 /* ScrollViewExample.swift */; };
 		80D011442CAA9C8F0002E458 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D011432CAA9C8F0002E458 /* Mock.swift */; };
 		80E012F82CDB642D000D1439 /* AdPlacementSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E012F72CDB642D000D1439 /* AdPlacementSU.swift */; };
-		80E587E82CEF405C00588A96 /* StubAdPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E587E72CEF405C00588A96 /* StubAdPlayerController.swift */; };
 		80E587EA2CEF458C00588A96 /* PlayerTimeIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E587E92CEF458C00588A96 /* PlayerTimeIndicator.swift */; };
 		80E9169B2CE6732800010B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9169A2CE672E600010B73 /* AppDelegate.swift */; };
 		80EA08242D133B06008A8FCA /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA081F2D133B06008A8FCA /* AppButton.swift */; };
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		2D786C7C2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStreamContentOverrideVC.swift; sourceTree = "<group>"; };
+		2DC3904F2F03F152004E5C2E /* MergeContentConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeContentConfigVC.swift; sourceTree = "<group>"; };
 		802C46AE2CF08C7A0019A9B2 /* PlayerLoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLoggerView.swift; sourceTree = "<group>"; };
 		802C46B02CF09E820019A9B2 /* PlayerStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateView.swift; sourceTree = "<group>"; };
 		802C46B42CF4E2F30019A9B2 /* PlayerStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateIndicator.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		80D011412CAA9C4B0002E458 /* ScrollViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExample.swift; sourceTree = "<group>"; };
 		80D011432CAA9C8F0002E458 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		80E012F72CDB642D000D1439 /* AdPlacementSU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPlacementSU.swift; sourceTree = "<group>"; };
-		80E587E72CEF405C00588A96 /* StubAdPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAdPlayerController.swift; sourceTree = "<group>"; };
 		80E587E92CEF458C00588A96 /* PlayerTimeIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTimeIndicator.swift; sourceTree = "<group>"; };
 		80E9169A2CE672E600010B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80EA081F2D133B06008A8FCA /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 			children = (
 				8099F1CC2CEDF09F00C9841C /* PlayerControlsView.swift */,
 				80E587E92CEF458C00588A96 /* PlayerTimeIndicator.swift */,
-				80E587E72CEF405C00588A96 /* StubAdPlayerController.swift */,
 				802C46AE2CF08C7A0019A9B2 /* PlayerLoggerView.swift */,
 				802C46B02CF09E820019A9B2 /* PlayerStateView.swift */,
 			);
@@ -173,6 +172,7 @@
 		803094B42CA2C512009233FF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				2DC3904F2F03F152004E5C2E /* MergeContentConfigVC.swift */,
 				2D786C7C2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift */,
 				802C46B32CF4E2BE0019A9B2 /* PlayerGui */,
 				80F904702CCB84B700442086 /* UIView+Extensions.swift */,
@@ -322,6 +322,7 @@
 				80E587EA2CEF458C00588A96 /* PlayerTimeIndicator.swift in Sources */,
 				2D786C7D2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift in Sources */,
 				80E012F82CDB642D000D1439 /* AdPlacementSU.swift in Sources */,
+				2DC390502F03F152004E5C2E /* MergeContentConfigVC.swift in Sources */,
 				80F904712CCB84B700442086 /* UIView+Extensions.swift in Sources */,
 				80F9046B2CCB834C00442086 /* AdCell.swift in Sources */,
 				80EA08242D133B06008A8FCA /* AppButton.swift in Sources */,
@@ -329,7 +330,6 @@
 				80F9046D2CCB834C00442086 /* TableViewExampleVC.swift in Sources */,
 				80F9046F2CCB834C00442086 /* UITableView+Extensions.swift in Sources */,
 				802C46B52CF4E2F30019A9B2 /* PlayerStateIndicator.swift in Sources */,
-				80E587E82CEF405C00588A96 /* StubAdPlayerController.swift in Sources */,
 				80FC87092CBE90460018CFA1 /* BasicExampleView.swift in Sources */,
 				80547BC32CA6F36D00AE6C5B /* AdPlacementUIViewRepresentable.swift in Sources */,
 				803094B62CA2C552009233FF /* SimpleExampleVC.swift in Sources */,
@@ -563,7 +563,7 @@
 			repositoryURL = "https://github.com/Aniview/ad-player-lite-ios-spm.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.3.1;
+				version = 1.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

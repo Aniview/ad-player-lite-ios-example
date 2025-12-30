@@ -107,7 +107,3 @@ struct PlayerTimeIndicator<Label: View>: View {
         label(viewModel.text)
     }
 }
-
-#Preview {
-    PlayerTimeIndicator(controller: StubAdPlayerController(state: .ready))
-}

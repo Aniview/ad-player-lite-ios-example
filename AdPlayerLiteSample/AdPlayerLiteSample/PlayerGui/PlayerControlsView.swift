@@ -76,7 +76,3 @@ struct PlayerControlsView: View {
             .padding(.all, buttonsPadding)
     }
 }
-
-#Preview {
-    PlayerControlsView(controller: StubAdPlayerController(state: .playingAd))
-}

@@ -41,6 +41,11 @@ struct LandingView: View {
                     InStreamContentOverrideVC()
                 }.navigationTitle("InStream")
             }
+            MenuNavigationButton("InStream: Merge Config") {
+                UIViewControllerAdapter {
+                    MergeContentConfigVC()
+                }.navigationTitle("InStream: Merge Config")
+            }
             AppButton("Interstitial", backgroundColor: .gray) {
                 let config = AdPlayerInterstitialConfiguration(
                     stalledVideoTimeout: 2.0,
