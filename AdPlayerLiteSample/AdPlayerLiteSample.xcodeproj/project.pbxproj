@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,6 +74,10 @@
 		80F904702CCB84B700442086 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		80FC87082CBE90460018CFA1 /* BasicExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		99F49CF02F224DF50096AC1E /* ContentTimeChange */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContentTimeChange; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8030947F2CA2C275009233FF /* Frameworks */ = {
@@ -172,6 +176,7 @@
 		803094B42CA2C512009233FF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				99F49CF02F224DF50096AC1E /* ContentTimeChange */,
 				2DC3904F2F03F152004E5C2E /* MergeContentConfigVC.swift */,
 				2D786C7C2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift */,
 				802C46B32CF4E2BE0019A9B2 /* PlayerGui */,
@@ -243,6 +248,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				99F49CF02F224DF50096AC1E /* ContentTimeChange */,
 			);
 			name = AdPlayerLiteSample;
 			packageProductDependencies = (

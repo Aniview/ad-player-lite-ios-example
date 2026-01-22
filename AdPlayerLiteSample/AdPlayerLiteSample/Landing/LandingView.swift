@@ -11,6 +11,8 @@ import SwiftUI
 struct LandingView: View {
     private let pubId = Constants.publisherId
     private let tagId = Constants.tagId
+    private let contentTimeUpdatesPubId = Constants.contentTimeChangeEventPubId
+    private let contentTimeUpdatesTagId = Constants.contentTimeChangeEventTagId
     @State private var topFadingMessage: String?
 
     var body: some View {
@@ -45,6 +47,11 @@ struct LandingView: View {
                 UIViewControllerAdapter {
                     MergeContentConfigVC()
                 }.navigationTitle("InStream: Merge Config")
+            }
+            MenuNavigationButton("ContentTimeChange") {
+                UIViewControllerAdapter {
+                    ContentTimeChangeViewController(pubId: contentTimeUpdatesPubId, tagId: contentTimeUpdatesTagId)
+                }.navigationTitle("Content Time Change")
             }
             AppButton("Interstitial", backgroundColor: .gray) {
                 let config = AdPlayerInterstitialConfiguration(
