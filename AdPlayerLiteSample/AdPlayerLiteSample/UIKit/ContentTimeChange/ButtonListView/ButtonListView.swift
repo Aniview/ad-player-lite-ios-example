@@ -29,10 +29,10 @@ final class ButtonListView: UIView {
         stack.spacing = 12
         stack.translatesAutoresizingMaskIntoConstraints = false
         
-        viewModel.items.forEach { item in
-            let row = RowButtonView(item: item)
-            row.onButtonTapped = { [weak self] tappedItem in
-                self?.viewModel.buttonTapped?(tappedItem)
+        for (i, item) in viewModel.items.enumerated() {
+            let row = RowButtonView(item: item, index: i)
+            row.onButtonTapped = { [weak self] index in
+                self?.viewModel.buttonTapped?(index)
             }
             stack.addArrangedSubview(row)
         }

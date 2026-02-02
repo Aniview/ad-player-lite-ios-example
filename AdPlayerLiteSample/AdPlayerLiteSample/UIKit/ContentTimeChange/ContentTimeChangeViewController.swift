@@ -54,8 +54,13 @@ final class ContentTimeChangeViewController: UIViewController {
         setupVideoContentView()
         
         // button tapped updates
-        viewModel.buttonListViewModel.buttonTapped = { [weak self] button in
-            self?.viewModel.setCurrentPosition(button.buttonTitle == "10 sec" ? 10 : 30)
+        viewModel.buttonListViewModel.buttonTapped = { [weak self] index in
+            switch index {
+            case 0:
+                self?.viewModel.setCurrentPosition(10)
+            default:
+                self?.viewModel.setCurrentPosition(30)
+            }
         }
         
         // combine helpers

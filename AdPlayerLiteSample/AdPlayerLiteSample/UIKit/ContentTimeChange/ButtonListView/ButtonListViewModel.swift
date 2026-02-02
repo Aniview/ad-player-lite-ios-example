@@ -9,7 +9,7 @@ import Foundation
 
 final class ButtonListViewModel: ObservableObject {
     let items: [RowButton]
-    var buttonTapped: ((RowButton) -> (Void))?
+    var buttonTapped: ((Int) -> (Void))?
     
     init(items: [RowButton]) {
         self.items = items

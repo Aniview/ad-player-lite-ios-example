@@ -16,10 +16,15 @@ final class RowButtonView: UIView {
     private let button: UIButton
     private let label = UILabel()
     
-    var onButtonTapped: ((RowButton) -> Void)?
+    private let index: Int
+    var onButtonTapped: ((Int) -> Void)?
     
-    init(item: RowButton) {
+    init(
+        item: RowButton,
+        index: Int
+    ) {
         self.item = item
+        self.index = index
         self.button = StyledButtonFactory.make(title: item.buttonTitle)
         super.init(frame: .zero)
         setup()
@@ -46,6 +51,6 @@ final class RowButtonView: UIView {
     
     // MARK: - Tap handler
     @objc private func tapped() {
-        onButtonTapped?(item)
+        onButtonTapped?(index)
     }
 }
