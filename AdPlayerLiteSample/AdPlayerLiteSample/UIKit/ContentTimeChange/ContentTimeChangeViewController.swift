@@ -17,6 +17,11 @@ final class ContentTimeChangeViewController: UIViewController {
     private let progressView = VideoProgressView()
     private let controller: AdPlayerInReadController
     
+    private let items = [
+        RowButton(buttonTitle: "10 sec"),
+        RowButton(buttonTitle: "30 sec")
+    ]
+    
     // MARK: - Combine
     private var cancellables = Set<AnyCancellable>()
     
@@ -30,8 +35,7 @@ final class ContentTimeChangeViewController: UIViewController {
             .newInReadController {
                 $0.isContentTimeTrackingEnabled = true
             }
-        
-        self.viewModel = ContentTimeChangeViewModel(controller: controller)
+        self.viewModel = ContentTimeChangeViewModel(controller: controller, items: items)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,9 +49,21 @@ final class ContentTimeChangeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         titleLabel.text = "To enable progress updates pass 'true' to 'isContentTimeTrackingEnabled'"
         setupTitleLabel()
+        setupButtonListView()
         setupProgressView()
         setupVideoContentView()
         
+        // button tapped updates
+        viewModel.buttonListViewModel.buttonTapped = { [weak self] index in
+            switch index {
+            case 0:
+                self?.viewModel.setCurrentPosition(10)
+            default:
+                self?.viewModel.setCurrentPosition(30)
+            }
+        }
+        
+        // combine helpers
         bind()
     }
     
@@ -92,6 +108,18 @@ final class ContentTimeChangeViewController: UIViewController {
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             progressView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             progressView.heightAnchor.constraint(equalToConstant: 24)
+        ])
+    }
+    
+    private func setupButtonListView() {
+        let listView = ButtonListView(viewModel: viewModel.buttonListViewModel)
+        listView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(listView)
+        
+        NSLayoutConstraint.activate([
+            listView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            listView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100)
         ])
     }
     
