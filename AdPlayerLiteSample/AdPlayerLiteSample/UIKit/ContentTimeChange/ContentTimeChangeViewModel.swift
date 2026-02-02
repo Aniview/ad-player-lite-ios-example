@@ -16,9 +16,14 @@ final class ContentTimeChangeViewModel: ObservableObject {
     
     // MARK: - Screen Controls ViewModels
     let videoProgressViewModel: VideoProgressViewModel
+    let buttonListViewModel: ButtonListViewModel
     
-    init(controller: AdPlayerController) {
+    init(
+        controller: AdPlayerController,
+        items: [RowButton]
+    ) {
         self.controller = controller
+        self.buttonListViewModel = ButtonListViewModel(items: items)
         let currentTimePublisher = controller.contentProgressPublisher
             .map(\.currentTime)
             .eraseToAnyPublisher()
@@ -28,5 +33,9 @@ final class ContentTimeChangeViewModel: ObservableObject {
             .eraseToAnyPublisher()
         
         self.videoProgressViewModel = VideoProgressViewModel(currentTime: currentTimePublisher, duration: durationPublisher)
+    }
+    
+    func setCurrentPosition(_ position: TimeInterval) {
+        self.controller.setContentCurrentTime(position)
     }
 }
