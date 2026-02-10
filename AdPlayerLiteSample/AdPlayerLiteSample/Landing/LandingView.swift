@@ -53,6 +53,12 @@ struct LandingView: View {
                     ContentTimeChangeViewController(pubId: contentTimeUpdatesPubId, tagId: contentTimeUpdatesTagId)
                 }.navigationTitle("Content Time Change")
             }
+            
+//            MenuNavigationButton("ContentSearch") {
+//                UIViewControllerAdapter {
+//                    SearchResponseViewController(pubId: pubId, tagId: tagId)
+//                }.navigationTitle("Search Response")
+//            }
             AppButton("Interstitial", backgroundColor: .gray) {
                 let config = AdPlayerInterstitialConfiguration(
                     stalledVideoTimeout: 2.0,
