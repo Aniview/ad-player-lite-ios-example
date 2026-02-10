@@ -76,6 +76,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		9996D7972F3B2F4200697768 /* SearchContent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SearchContent; sourceTree = "<group>"; };
 		99F49CF02F224DF50096AC1E /* ContentTimeChange */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContentTimeChange; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -176,6 +177,7 @@
 		803094B42CA2C512009233FF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9996D7972F3B2F4200697768 /* SearchContent */,
 				99F49CF02F224DF50096AC1E /* ContentTimeChange */,
 				2DC3904F2F03F152004E5C2E /* MergeContentConfigVC.swift */,
 				2D786C7C2EF43CEC0088B5E0 /* InStreamContentOverrideVC.swift */,
@@ -250,6 +252,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				9996D7972F3B2F4200697768 /* SearchContent */,
 				99F49CF02F224DF50096AC1E /* ContentTimeChange */,
 			);
 			name = AdPlayerLiteSample;
@@ -571,7 +574,7 @@
 			repositoryURL = "https://github.com/Aniview/ad-player-lite-ios-spm.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.6.0;
+				version = 1.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
