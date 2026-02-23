@@ -574,7 +574,7 @@
 			repositoryURL = "https://github.com/Aniview/ad-player-lite-ios-spm.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.8.0;
+				version = 1.8.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

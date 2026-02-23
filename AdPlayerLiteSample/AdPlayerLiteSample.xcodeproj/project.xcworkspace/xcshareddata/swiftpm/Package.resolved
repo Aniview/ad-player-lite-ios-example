@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Aniview/ad-player-lite-ios-spm.git",
       "state" : {
-        "revision" : "2bd2af50fa277da8f70b646f95922df2e0683783",
-        "version" : "1.8.0"
+        "revision" : "d9dd8add36c02c67716e856d260325c2de423cfb",
+        "version" : "1.8.2"
       }
     },
     {
